@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YnR-bs-9GQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeatherDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IJY-fj-dyk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                    <segment title=""/>
+                                </segments>
+                                <connections>
+                                    <action selector="actionForSegmentedControlChangeInIndex:" destination="BYZ-38-t0r" eventType="valueChanged" id="C7x-vM-dn1"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TaA-GQ-hBH">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="su4-IO-MBI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Esb-dc-NEf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TaA-GQ-hBH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="6cb-D0-QkM"/>
+                            <constraint firstItem="IJY-fj-dyk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BjT-pk-uQF"/>
+                            <constraint firstItem="TaA-GQ-hBH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K6K-kB-Qyk"/>
+                            <constraint firstItem="TaA-GQ-hBH" firstAttribute="top" secondItem="IJY-fj-dyk" secondAttribute="bottom" constant="8" id="P14-cu-c6Y"/>
+                            <constraint firstItem="TaA-GQ-hBH" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hrS-nB-nKd"/>
+                            <constraint firstItem="IJY-fj-dyk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qg4-WN-BTg"/>
+                            <constraint firstItem="IJY-fj-dyk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uLo-33-wjb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jZc-ai-g5C"/>
+                    <connections>
+                        <outlet property="segmentedControlForDates" destination="IJY-fj-dyk" id="RGe-2E-gjU"/>
+                        <outlet property="tableViewForWeatherData" destination="TaA-GQ-hBH" id="fgG-Hz-V2i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-50.399999999999999" y="116.49175412293854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f3x-nn-7RG">
+            <objects>
+                <navigationController id="YnR-bs-9GQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q76-7C-SMX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SM3-u1-a0I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ITi-tn-tiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-982" y="118"/>
+        </scene>
+    </scenes>
+</document>
